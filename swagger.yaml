@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: OneDrive Asset Uploader API
+  description: API for uploading files to Microsoft OneDrive
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local server
+paths:
+  /api/upload:
+    post:
+      summary: Upload a file to OneDrive
+      description: Uploads an image or PDF to the configured OneDrive folder
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The file to upload (PDF, JPG, PNG)
+      responses:
+        '200':
+          description: File uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: "01ABC..."
+                      name:
+                        type: string
+                        example: "document.pdf"
+                      webUrl:
+                        type: string
+                        example: "https://1drv.ms/..."
+        '400':
+          description: Bad request (missing file or invalid type)
+        '500':
+          description: Server error
