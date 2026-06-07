@@ -1,0 +1,12 @@
+{
+    "gitflow4code.features": [
+        {
+            "name": "feature/one-drive-upload",
+            "base": "develop"
+        },
+        {
+            "name": "feature/Onedrive-asset-uploader",
+            "base": "develop"
+        }
+    ]
+}
