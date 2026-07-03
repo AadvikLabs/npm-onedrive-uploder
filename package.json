@@ -1,6 +1,6 @@
 {
-    "name": "@aadviklabs/onedrive-uploader",
-    "version": "1.0.0",
+    "name": "@aadvik-teklabs/onedrive-uploader",
+    "version": "1.0.1",
     "description": "Premium OneDrive Asset Uploader with a modern drag-and-drop UI and automated OAuth2 token management.",
     "main": "index.js",
     "files": [
